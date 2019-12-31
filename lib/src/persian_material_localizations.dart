@@ -101,4 +101,89 @@ class PersianMaterialLocalizations extends DefaultMaterialLocalizations {
 
   @override
   String get postMeridiemAbbreviation => 'ب. ظهر';
+
+  @override
+  String get previousMonthTooltip => 'ماه قبل';
+
+  @override
+  String get nextMonthTooltip => 'ماه بعد';
+
+  @override
+  String get previousPageTooltip => 'صفحه قبل';
+
+  @override
+  String get nextPageTooltip => 'صفحه بعد';
+
+  @override
+  String get backButtonTooltip => 'بازگشت';
+
+  @override
+  String get closeButtonLabel => 'بستن';
+
+  @override
+  String get closeButtonTooltip => 'بستن';
+
+  @override
+  String get continueButtonLabel => 'ادامه';
+
+  @override
+  String get deleteButtonTooltip => 'پاک کردن';
+
+  @override
+  String get drawerLabel => 'منوی کنار';
+
+  @override
+  String get rowsPerPageTitle => 'تعداد سطر در صفحه';
+
+  @override
+  String get reorderItemDown => 'انتقال به پایین';
+
+  @override
+  String get reorderItemUp => 'انتقال به بالا';
+
+  @override
+  String get reorderItemLeft => 'انتقال به چپ';
+
+  @override
+  String get reorderItemRight => 'انتقال به راست';
+
+  @override
+  String get reorderItemToStart => 'انتقال به ابتدا';
+
+  @override
+  String get reorderItemToEnd => 'انتقال به انتها';
+
+  @override
+  String get refreshIndicatorSemanticLabel => 'رفرش';
+
+  @override
+  String get searchFieldLabel => 'جستجو';
+
+  @override
+  String selectedRowCountTitle(int selectedRowCount) {
+    switch (selectedRowCount) {
+      case 0:
+        return 'هیچ آیتمی انتخاب نشده';
+      default:
+        return toPersian('$selectedRowCount آیتم انتخاب شده');
+    }
+  }
+
+  @override
+  String pageRowsInfoTitle(
+      int firstRow, int lastRow, int rowCount, bool rowCountIsApproximate) {
+    return rowCountIsApproximate
+        ? toPersian('$firstRow–$lastRow از حدود $rowCount')
+        : toPersian('$firstRow–$lastRow از $rowCount');
+  }
+
+  @override
+  String remainingTextFieldCharacterCount(int remaining) {
+    switch (remaining) {
+      case 0:
+        return 'پر شد';
+      default:
+        return '$remaining حرف مانده';
+    }
+  }
 }
