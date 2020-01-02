@@ -1,14 +1,33 @@
 # persian_flutter
-
-A new Flutter package project.
+Persian date picker, time picker and localization for flutter.
 
 ## Getting Started
 
-This project is a starting point for a Dart
-[package](https://flutter.dev/developing-packages/),
-a library module containing code that can be shared easily across
-multiple Flutter or Dart projects.
+A simple example on how to display a Persian datepicker.
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.dev/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+**Import the package**
+
+```dart
+import 'package:persian_flutter/persian_flutter.dart';
+```
+
+**Call the picker**
+
+```dart
+RaisedButton(onPressed: (){
+	final date = await showPersianDatePicker(
+	  context: context,
+	  initialDate: DateTime.now(),
+	  firstDate: DateTime.now().add(
+		Duration(days: -1),
+	  ),
+	  lastDate: DateTime.now().add(
+		Duration(days: 90),
+	  ),
+	);
+	
+	if(date != null)
+	{
+		// Do simething.
+	}
+```
