@@ -14,20 +14,23 @@ import 'package:persian_flutter/persian_flutter.dart';
 **Call the picker**
 
 ```dart
-RaisedButton(onPressed: (){
-	final date = await showPersianDatePicker(
-	  context: context,
-	  initialDate: DateTime.now(),
-	  firstDate: DateTime.now().add(
-		Duration(days: -1),
-	  ),
-	  lastDate: DateTime.now().add(
-		Duration(days: 90),
-	  ),
-	);
-	
-	if(date != null)
-	{
-		// Do simething.
-	}
+RaisedButton(onPressed: () async {
+    final date = await showPersianDatePicker(
+      context: context,
+      initialDate: DateTime.now(),
+      firstDate: DateTime.now().add(
+      Duration(days: -1),
+      ),
+      lastDate: DateTime.now().add(
+      Duration(days: 90),
+      ),
+    );
+    
+    if(date != null)
+    {
+      // Do simething.
+    }
+  },
+  child: Text('Show date picker'),
+);
 ```
