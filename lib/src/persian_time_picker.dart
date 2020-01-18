@@ -196,12 +196,14 @@ class _DayPeriodControl extends StatelessWidget {
     }
     switch (fragmentContext.targetPlatform) {
       case TargetPlatform.android:
-      case TargetPlatform.macOS:
+      //case TargetPlatform.macOS:
       case TargetPlatform.fuchsia:
         _announceToAccessibility(
             context, PersianMaterialLocalizations().anteMeridiemAbbreviation);
         break;
       case TargetPlatform.iOS:
+        break;
+      default:
         break;
     }
     _togglePeriod();
@@ -219,7 +221,9 @@ class _DayPeriodControl extends StatelessWidget {
         break;
       case TargetPlatform.iOS:
         break;
-      case TargetPlatform.macOS:
+      //case TargetPlatform.macOS:
+      //  break;
+      default:
         break;
     }
     _togglePeriod();
@@ -1581,7 +1585,9 @@ class _TimePickerDialogState extends State<_TimePickerDialog> {
         });
         break;
       case TargetPlatform.iOS:
-      case TargetPlatform.macOS:
+      //case TargetPlatform.macOS:
+      //  break;
+      default:
         break;
     }
   }
