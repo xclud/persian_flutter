@@ -38,37 +38,40 @@ class PersianMaterialLocalizations extends DefaultMaterialLocalizations {
   @override
   String formatYear(DateTime date) {
     final pd = Jalali.fromDateTime(date);
-    return toPersian(pd.year.toString());
+    return pd.year.toString().withPersianNumbers();
   }
 
   @override
   String formatHour(TimeOfDay timeOfDay, {bool alwaysUse24HourFormat = false}) {
-    return toPersian(super
-        .formatHour(timeOfDay, alwaysUse24HourFormat: alwaysUse24HourFormat));
+    return super
+        .formatHour(timeOfDay, alwaysUse24HourFormat: alwaysUse24HourFormat)
+        .withPersianNumbers();
   }
 
   @override
   String formatMinute(TimeOfDay timeOfDay) {
-    return toPersian(super.formatMinute(timeOfDay));
+    return super.formatMinute(timeOfDay).withPersianNumbers();
   }
 
   @override
   String formatTimeOfDay(TimeOfDay timeOfDay,
       {bool alwaysUse24HourFormat = false}) {
-    return toPersian(super.formatTimeOfDay(timeOfDay,
-        alwaysUse24HourFormat: alwaysUse24HourFormat));
+    return super
+        .formatTimeOfDay(timeOfDay,
+            alwaysUse24HourFormat: alwaysUse24HourFormat)
+        .withPersianNumbers();
   }
 
   @override
   String formatMonthYear(DateTime date) {
     final pd = Jalali.fromDateTime(date);
-    return toPersian('${_monthNames[pd.month - 1]} ${pd.year}');
+    return '${_monthNames[pd.month - 1]} ${pd.year}'.withPersianNumbers();
   }
 
   @override
   String formatFullDate(DateTime date) {
     final pd = Jalali.fromDateTime(date);
-    return toPersian('${pd.year}/${pd.month}/${pd.day}');
+    return '${pd.year}/${pd.month}/${pd.day}'.withPersianNumbers();
   }
 
   @override
@@ -76,12 +79,12 @@ class PersianMaterialLocalizations extends DefaultMaterialLocalizations {
     final pd = Jalali.fromDateTime(date);
     final weekday = weekDays[(date.weekday + 1) % 7];
     final month = _monthNames[pd.month - 1];
-    return toPersian('$weekday، ${pd.day} $month');
+    return '$weekday، ${pd.day} $month'.withPersianNumbers();
   }
 
   @override
   String formatDecimal(int number) {
-    return toPersian(super.formatDecimal(number));
+    return super.formatDecimal(number).withPersianNumbers();
   }
 
   @override
@@ -165,7 +168,7 @@ class PersianMaterialLocalizations extends DefaultMaterialLocalizations {
       case 0:
         return 'هیچ آیتمی انتخاب نشده';
       default:
-        return toPersian('$selectedRowCount آیتم انتخاب شده');
+        return '$selectedRowCount آیتم انتخاب شده'.withPersianNumbers();
     }
   }
 
@@ -173,8 +176,8 @@ class PersianMaterialLocalizations extends DefaultMaterialLocalizations {
   String pageRowsInfoTitle(
       int firstRow, int lastRow, int rowCount, bool rowCountIsApproximate) {
     return rowCountIsApproximate
-        ? toPersian('$firstRow–$lastRow از حدود $rowCount')
-        : toPersian('$firstRow–$lastRow از $rowCount');
+        ? '$firstRow–$lastRow از حدود $rowCount'.withPersianNumbers()
+        : '$firstRow–$lastRow از $rowCount'.withPersianNumbers();
   }
 
   @override
@@ -183,7 +186,7 @@ class PersianMaterialLocalizations extends DefaultMaterialLocalizations {
       case 0:
         return 'پر شد';
       default:
-        return '$remaining حرف مانده';
+        return '$remaining حرف مانده'.withPersianNumbers();
     }
   }
 }

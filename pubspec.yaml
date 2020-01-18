@@ -1,16 +1,15 @@
 name: persian_flutter
-description: Persian Localization for Flutter.
-version: 0.0.4
-author: Mahdi K. Fard <mahdi3466@gmail.com>
+description: Persian Localization for Flutter. Include a Persian and Time picker which supports Persian calendar.
+version: 0.1.1
 homepage: https://github.com/xclud/persian_flutter
 
 environment:
-  sdk: ">=2.1.0 <3.0.0"
+  sdk: ">=2.6.0 <3.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
-  persian: ^0.0.5
+  persian: ^0.1.1
   shamsi_date: ^0.7.1
 
 dev_dependencies:

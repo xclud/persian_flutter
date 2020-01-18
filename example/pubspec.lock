@@ -103,11 +103,18 @@ packages:
     source: hosted
     version: "1.8.0+1"
   persian:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: persian
       url: "https://pub.dartlang.org"
     source: hosted
+    version: "0.1.1"
+  persian_flutter:
+    dependency: "direct main"
+    description:
+      path: ".."
+      relative: true
+    source: path
     version: "0.1.1"
   petitparser:
     dependency: transitive
@@ -124,7 +131,7 @@ packages:
     source: hosted
     version: "2.0.5"
   shamsi_date:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: shamsi_date
       url: "https://pub.dartlang.org"

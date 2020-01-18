@@ -871,7 +871,8 @@ class _YearPickerState extends State<YearPicker> {
           child: Center(
             child: Semantics(
               selected: isSelected,
-              child: Text(toPersian(year.toString()), style: itemStyle),
+              child:
+                  Text(year.toString().withPersianNumbers(), style: itemStyle),
             ),
           ),
         );
@@ -937,6 +938,7 @@ class _DatePickerDialogState extends State<_DatePickerDialog> {
       case TargetPlatform.fuchsia:
         HapticFeedback.vibrate();
         break;
+      case TargetPlatform.macOS:
       case TargetPlatform.iOS:
         break;
     }
