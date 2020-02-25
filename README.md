@@ -1,4 +1,6 @@
 # persian_flutter
+[![pub package](https://img.shields.io/pub/v/persian_flutter.svg)](https://pub.dartlang.org/packages/persian_flutter)
+
 Persian date picker, time picker and localization for flutter.
 
 ## Getting Started
