@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:persian/persian.dart';
-import 'package:shamsi_date/shamsi_date.dart';
 
 class PersianMaterialLocalizations extends DefaultMaterialLocalizations {
   static const _singleton = PersianMaterialLocalizations._();
@@ -37,7 +36,7 @@ class PersianMaterialLocalizations extends DefaultMaterialLocalizations {
 
   @override
   String formatYear(DateTime date) {
-    final pd = Jalali.fromDateTime(date);
+    final pd = PersianDate.fromDateTime(date);
     return pd.year.toString().withPersianNumbers();
   }
 
@@ -64,19 +63,19 @@ class PersianMaterialLocalizations extends DefaultMaterialLocalizations {
 
   @override
   String formatMonthYear(DateTime date) {
-    final pd = Jalali.fromDateTime(date);
+    final pd = PersianDate.fromDateTime(date);
     return '${_monthNames[pd.month - 1]} ${pd.year}'.withPersianNumbers();
   }
 
   @override
   String formatFullDate(DateTime date) {
-    final pd = Jalali.fromDateTime(date);
+    final pd = PersianDate.fromDateTime(date);
     return '${pd.year}/${pd.month}/${pd.day}'.withPersianNumbers();
   }
 
   @override
   String formatMediumDate(DateTime date) {
-    final pd = Jalali.fromDateTime(date);
+    final pd = PersianDate.fromDateTime(date);
     final weekday = weekDays[(date.weekday + 1) % 7];
     final month = _monthNames[pd.month - 1];
     return '$weekday، ${pd.day} $month'.withPersianNumbers();
